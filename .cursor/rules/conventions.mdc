@@ -1,0 +1,219 @@
+---
+alwaysApply: true
+---
+
+# Конвенции проекта POS Terminal
+
+## Основные технологии
+
+### Framework & Runtime
+- **Nuxt 4** (v4.0.1) - полнофункциональный фреймворк
+- **Vue 3** (v3.5.18) - основа для компонентов
+- **TypeScript** (v5.8.3) - строгая типизация
+- **Node.js** с ES модулями (`"type": "module"`)
+
+### UI & Styling
+- **@nuxt/ui** (v3.3.0) - официальная UI библиотека Nuxt с встроенным Tailwind CSS
+- **Tailwind CSS** - утилитарные CSS классы (через @nuxt/ui)
+- Стили импортируются через `~/assets/css/main.css`
+
+### Инструменты разработки
+- **@nuxt/eslint** (v1.7.1) - линтинг с конфигурацией Nuxt
+- **@nuxt/scripts** (v0.11.10) - управление скриптами
+- **Nuxt DevTools** - включены для разработки
+
+## Структура проекта
+
+### Директории
+```
+app/                 # Главная директория приложения
+├── app.vue         # Корневой компонент с UApp
+├── assets/css/     # Глобальные стили
+└── ...
+
+.rules/             # Конвенции и правила проекта
+public/             # Статические файлы
+```
+
+### Файлы конфигурации
+- `nuxt.config.ts` - основная конфигурация Nuxt
+- `tsconfig.json` - TypeScript конфигурация (проект-ссылки)
+- `eslint.config.mjs` - ESLint с Nuxt интеграцией
+
+## Правила разработки
+
+### Импорты и автоимпорты
+- **ОБЯЗАТЕЛЬНО**: Используй автоимпорты Nuxt везде где возможно
+- **НЕ ИСПОЛЬЗУЙ** explicit imports для stores, composables, компонентов
+- Nuxt автоматически импортирует:
+  - Vue composables (`ref`, `computed`, `watch`, etc.)
+  - Nuxt composables (`useRouter`, `useFetch`, etc.)
+  - Компоненты из `components/`
+  - Утилиты из `utils/`
+  - Stores из `stores/`
+
+### TypeScript
+- Все файлы используют TypeScript
+- Конфигурация основана на Nuxt проект-ссылках
+- Строгая типизация включена
+
+### Компоненты
+- Используй компоненты из `@nuxt/ui` (`UApp`, `UButton`, etc.)
+- Корневой компонент: `UApp` обертка с `NuxtPage`
+- SFC формат (Single File Components)
+
+### Стили
+- Tailwind CSS классы через @nuxt/ui
+- Глобальные стили в `~/assets/css/main.css`
+- Импорт: `@import "tailwindcss"` и `@import "@nuxt/ui"`
+
+### Линтинг
+- ESLint с официальной Nuxt конфигурацией
+- Конфигурация: `.nuxt/eslint.config.mjs`
+- Автоматическое исправление доступно
+
+## Скрипты NPM
+
+```bash
+npm run dev        # Режим разработки
+npm run build      # Продакшн сборка
+npm run generate   # Статическая генерация
+npm run preview    # Предпросмотр сборки
+npm run postinstall # Подготовка Nuxt (автоматически)
+```
+
+## Особенности конфигурации
+
+### Nuxt Config
+- `compatibilityDate: '2025-07-15'` - дата совместимости
+- DevTools включены
+- Модули: ESLint, Scripts, UI
+- CSS: подключен main.css
+
+### Версионность
+- Используются последние стабильные версии
+- Nuxt 4 с новейшими возможностями
+- Vue 3 Composition API
+
+## Рекомендации
+
+1. **Используй автоимпорты** - это основа Nuxt 4
+2. **Компоненты UI** - предпочитай @nuxt/ui компоненты
+3. **TypeScript everywhere** - типизируй все
+4. **Tailwind utilities** - используй утилитарные классы
+5. **Composables** - логику выноси в composables
+6. **Следуй Nuxt conventions** - используй стандартные директории
+
+## Совместимость
+
+- Совместим с современными браузерами
+- ES модули поддержка
+- TypeScript strict mode
+- Vue 3 Composition API# Конвенции проекта POS Terminal
+
+## Основные технологии
+
+### Framework & Runtime
+- **Nuxt 4** (v4.0.1) - полнофункциональный фреймворк
+- **Vue 3** (v3.5.18) - основа для компонентов
+- **TypeScript** (v5.8.3) - строгая типизация
+- **Node.js** с ES модулями (`"type": "module"`)
+
+### UI & Styling
+- **@nuxt/ui** (v3.3.0) - официальная UI библиотека Nuxt с встроенным Tailwind CSS
+- **Tailwind CSS** - утилитарные CSS классы (через @nuxt/ui)
+- Стили импортируются через `~/assets/css/main.css`
+
+### Инструменты разработки
+- **@nuxt/eslint** (v1.7.1) - линтинг с конфигурацией Nuxt
+- **@nuxt/scripts** (v0.11.10) - управление скриптами
+- **Nuxt DevTools** - включены для разработки
+
+## Структура проекта
+
+### Директории
+```
+app/                 # Главная директория приложения
+├── app.vue         # Корневой компонент с UApp
+├── assets/css/     # Глобальные стили
+└── ...
+
+.rules/             # Конвенции и правила проекта
+public/             # Статические файлы
+```
+
+### Файлы конфигурации
+- `nuxt.config.ts` - основная конфигурация Nuxt
+- `tsconfig.json` - TypeScript конфигурация (проект-ссылки)
+- `eslint.config.mjs` - ESLint с Nuxt интеграцией
+
+## Правила разработки
+
+### Импорты и автоимпорты
+- **ОБЯЗАТЕЛЬНО**: Используй автоимпорты Nuxt везде где возможно
+- **НЕ ИСПОЛЬЗУЙ** explicit imports для stores, composables, компонентов
+- Nuxt автоматически импортирует:
+  - Vue composables (`ref`, `computed`, `watch`, etc.)
+  - Nuxt composables (`useRouter`, `useFetch`, etc.)
+  - Компоненты из `components/`
+  - Утилиты из `utils/`
+  - Stores из `stores/`
+
+### TypeScript
+- Все файлы используют TypeScript
+- Конфигурация основана на Nuxt проект-ссылках
+- Строгая типизация включена
+
+### Компоненты
+- Используй компоненты из `@nuxt/ui` (`UApp`, `UButton`, etc.)
+- Корневой компонент: `UApp` обертка с `NuxtPage`
+- SFC формат (Single File Components)
+
+### Стили
+- Tailwind CSS классы через @nuxt/ui
+- Глобальные стили в `~/assets/css/main.css`
+- Импорт: `@import "tailwindcss"` и `@import "@nuxt/ui"`
+
+### Линтинг
+- ESLint с официальной Nuxt конфигурацией
+- Конфигурация: `.nuxt/eslint.config.mjs`
+- Автоматическое исправление доступно
+
+## Скрипты NPM
+
+```bash
+npm run dev        # Режим разработки
+npm run build      # Продакшн сборка
+npm run generate   # Статическая генерация
+npm run preview    # Предпросмотр сборки
+npm run postinstall # Подготовка Nuxt (автоматически)
+```
+
+## Особенности конфигурации
+
+### Nuxt Config
+- `compatibilityDate: '2025-07-15'` - дата совместимости
+- DevTools включены
+- Модули: ESLint, Scripts, UI
+- CSS: подключен main.css
+
+### Версионность
+- Используются последние стабильные версии
+- Nuxt 4 с новейшими возможностями
+- Vue 3 Composition API
+
+## Рекомендации
+
+1. **Используй автоимпорты** - это основа Nuxt 4
+2. **Компоненты UI** - предпочитай @nuxt/ui компоненты
+3. **TypeScript everywhere** - типизируй все
+4. **Tailwind utilities** - используй утилитарные классы
+5. **Composables** - логику выноси в composables
+6. **Следуй Nuxt conventions** - используй стандартные директории
+
+## Совместимость
+
+- Совместим с современными браузерами
+- ES модули поддержка
+- TypeScript strict mode
+- Vue 3 Composition API

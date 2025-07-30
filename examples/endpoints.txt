@@ -1,0 +1,11 @@
+<select id="SetServer" onchange="SetServer()">
+                <option value="AddIn">Через расширение</option>
+                <option value="http://localhost:5893/" selected="">http://localhost:5893/</option>
+                <option value="https://localhost:5893/">https://localhost:5893/</option>
+                <option value="http://localhost:5894/">http://localhost:5894/</option>
+                <option value="https://localhost:5894/">https://localhost:5894/</option>
+                <option value="http://localhost:5895/">http://localhost:5895/</option>
+                <option value="https://localhost:5895/">https://localhost:5895/</option>
+                <option value="http://localhost:5896/">http://localhost:5896/</option>
+                <option value="https://localhost:5896/">https://localhost:5896/</option>
+            </select>
