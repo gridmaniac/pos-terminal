@@ -397,7 +397,7 @@ async function testKassirApi() {
   try {
     addLog('system', 'Проверка доступности API Kassir.ru...')
     
-    const response = await $fetch('https://api.kassir.ru/api/cities', {
+    const response = await $fetch('https://api.kassirdev.ru/api/cities', {
       method: 'GET'
     })
     
