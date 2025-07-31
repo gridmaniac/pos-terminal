@@ -4,4 +4,13 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/eslint', '@nuxt/scripts', '@nuxt/ui'],
   css: ['~/assets/css/main.css'],
+  app: {
+    head: {
+      script: [
+        {
+          innerHTML: 'var KkmServerAddIn = {};',
+        },
+      ],
+    },
+  },
 })
